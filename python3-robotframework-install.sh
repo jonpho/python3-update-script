@@ -10,12 +10,6 @@ if [ ${formersetup} = n ] || [ -z ${formersetup} ]
 then
   echo Starting Clean Setup
 
-  echo **Purging Old Jython Configuration**
-  ../mvnw clean -Ppurge-jython-libraries
-
-  echo **Purging Additional Robot Files**
-  ../mvnw clean -Ppurge-robot-setup
-
   echo **Update Brew**
   brew update
 
@@ -79,9 +73,6 @@ then
   echo **Installing Wheel**
   pip install wheel
 
-  echo **Installing Robot Libraries**
-  ../mvnw validate -Probot-setup
-
   echo PLEASE RESTART ALL TERMINALS FOR THE CHANGES TO TAKE EFFECT
 
 else
@@ -110,9 +101,6 @@ else
 
   echo **Installing Wheel**
   pip install wheel
-
-  echo **Installing Robot Libraries**
-  ../mvnw validate -Probot-setup
 
   echo PLEASE RESTART ALL TERMINALS FOR THE CHANGES TO TAKE EFFECT
 fi
